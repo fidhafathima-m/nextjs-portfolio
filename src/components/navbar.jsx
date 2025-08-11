@@ -123,13 +123,13 @@ const Navbar = () => {
     {open && (
       <motion.div variants={listVariants} initial='closed' animate='opened' className="fixed top-0 left-0 w-screen h-screen bg-black/60 backdrop-blur-md text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
         {links.map((link) => (
-          <motion.div variants={listItemVarients} key={link.title}>
-            <Link href={link.url} >
+          <motion.div variants={listItemVarients} key={link.title} onClick={() => setOpen(false)}>
+            <Link href={link.url}>
               {link.title}
             </Link>
           </motion.div>
-          
         ))}
+
       </motion.div>
     )}
   </div>
