@@ -8,34 +8,38 @@ const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet...",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Art Mart",
+    desc: "An E-commerce website build to sell art supplies using HTML, Bootstrap, Node.js, Express.js and MongoDB.",
+    img: "https://images.pexels.com/photos/1264940/pexels-photo-1264940.jpeg?_gl=1*hr6mvm*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU0OTkwNDYkajYwJGwwJGgw",
+    link: "https://www.art-mart.shop/",
+    gitLink: "https://github.com/fidhafathima-m/Art-Mart"
   },
   {
     id: 2,
     color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet...",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "To-Do List",
+    desc: "A simple to-do list where users can add, edit, delete and rearrange to-dos. Developed using React.",
+    img: "https://images.pexels.com/photos/8850706/pexels-photo-8850706.jpeg?_gl=1*wdaqtf*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDAzNDYkajIyJGwwJGgw",
+    link: "https://todo-app-fidha.netlify.app/",
+    gitLink: "https://github.com/fidhafathima-m/to-do-app-react"
   },
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet...",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "OLX Clone",
+    desc: "A full-featured OLX Clone built using the MERN Stack (MongoDB, Express, React, Node.js) and Context API for state management.",
+    img: "https://images.pexels.com/photos/5076525/pexels-photo-5076525.jpeg?_gl=1*bll1ud*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDA4ODIkajU5JGwwJGgw",
+    link: "https://fi-olx-clone.netlify.app/",
+    gitLink: "https://github.com/fidhafathima-m/olx-axions"
   },
   {
     id: 4,
     color: "from-purple-300 to-red-300",
-    title: "Spotify Music App",
-    desc: "Lorem ipsum dolor sit amet...",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "https://lama.dev",
+    title: "Netflix Clone",
+    desc: "A responsive movie browsing web app built with React, allowing users to explore, watch trailers, and manage a personalized watchlist. Features secure authentication, dynamic routing, and data from the TMDB API.",
+    img: "https://images.pexels.com/photos/5082561/pexels-photo-5082561.jpeg?_gl=1*32hmib*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDA5OTkkajUkbDAkaDA.",
+    link: "https://f-netfliks-clone.netlify.app/",
+    gitLink: "https://github.com/fidhafathima-m/netflix-react"
   },
 ];
 
@@ -85,11 +89,19 @@ const Portfolio = () => {
                     />
                   </div>
                   <p>{item.desc}</p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="bg-white text-black px-4 py-2 rounded w-fit">
-                      See Demo
-                    </button>
-                  </Link>
+                  <div className="flex justify-end gap-4">
+  <Link href={item.link}>
+    <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
+      See Demo
+    </button>
+  </Link>
+  <Link href={item.gitLink}>
+    <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
+      See Code
+    </button>
+  </Link>
+</div>
+                  
                 </div>
               </div>
             ))}
@@ -136,6 +148,11 @@ const Portfolio = () => {
                 <Link href={item.link} className="flex justify-center mt-2">
                   <button className="bg-white text-black px-10 py-4 sm:px-12 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
                     See Demo
+                  </button>
+                </Link>
+                <Link href={item.gitLink} className="flex justify-center mt-2">
+                  <button className="bg-white text-black px-10 py-4 sm:px-12 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
+                    See Code
                   </button>
                 </Link>
               </div>
