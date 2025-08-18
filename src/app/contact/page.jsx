@@ -138,7 +138,36 @@ const Contact = () => {
             </motion.div>
           )}
         </div>
+        <div className="lg:hidden w-full px-4 py-10 text-center">
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 1.2, duration: 0.8 }}
+    className="whitespace-nowrap overflow-hidden text-ellipsis"
+  >
+    <motion.span
+      className="text-xl md:text-2xl font-light bg-gradient-to-r from-purple-500 via-pink-400 to-orange-500 bg-clip-text text-transparent inline-flex items-center"
+      animate={{ 
+        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      style={{
+        backgroundSize: "200% 200%",
+        display: 'inline-flex',
+        alignItems: 'center'
+      }}
+    >
+      Open to opportunities — let&apos;s chat 
+    </motion.span>
+    &nbsp;🤝
+  </motion.div>
+</div>
       </div>
+      
     </motion.div>
   )
 }
