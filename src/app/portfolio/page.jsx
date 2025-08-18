@@ -65,7 +65,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: "10px" }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
-            <Image src="/scroll.svg" alt="Scroll" width={30} height={30} />
+            <Image src="/scroll.svg" alt="Scroll" width={30} height={30}  unoptimized />
           </motion.div>
         </div>
 
@@ -86,6 +86,7 @@ const Portfolio = () => {
                       alt={item.title}
                       fill
                       className="object-cover rounded-lg"
+                       unoptimized
                     />
                   </div>
                   <p>{item.desc}</p>
@@ -122,7 +123,7 @@ const Portfolio = () => {
               animate={{ opacity: 1, y: "8px" }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
-              <Image src="/scroll.svg" alt="Scroll" width={28} height={28} className="sm:w-8 sm:h-8" />
+              <Image src="/scroll.svg" alt="Scroll" width={28} height={28} className="sm:w-8 sm:h-8"  unoptimized/>
             </motion.div>
           </div>
         </div>
@@ -142,6 +143,7 @@ const Portfolio = () => {
             alt={item.title}
             fill
             className="object-cover rounded-2xl shadow-2xl"
+             unoptimized
           />
         </div>
         <p className="text-lg sm:text-xl md:text-2xl opacity-95 font-medium text-center">{item.desc}</p>

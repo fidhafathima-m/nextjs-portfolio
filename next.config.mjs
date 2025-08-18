@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-    images: {
-        loader: "custom",
-        loaderFile: "./loader.js",
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "images.pexels.com"
-            }
-        ]
-    }
-};
+  output: 'export',
+  images: {
+    unoptimized: true, // Required for static exports
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/photos/**',
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+module.exports = nextConfig

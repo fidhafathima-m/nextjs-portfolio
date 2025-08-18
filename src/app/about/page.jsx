@@ -36,13 +36,13 @@ const About = () => {
               I build to learn, and I learn to build better.
             </span>
             {/* sign */}
-            <Image src="/sign.svg" alt="Sign" width={185} height={77} className="self-end"></Image>
+            <Image src="/sign.svg" alt="Sign" width={185} height={77} className="self-end"  unoptimized></Image>
             {/* scroll */}
             <motion.div 
                 initial={{opacity: 0.2, y: 0}}
                 animate={{opacity: 1, y: "10px"}}
                 transition={{repeat: Infinity, duration: 3, ease: "easeInOut"}}>
-                <Image src="/scroll.svg" alt="Scroll" width={30} height={30}></Image>
+                <Image src="/scroll.svg" alt="Scroll" width={30} height={30}  unoptimized></Image>
               </motion.div>
           </div>
 
@@ -101,7 +101,7 @@ const About = () => {
                 initial={{opacity: 0.2, y: 0}}
                 animate={{opacity: 1, y: "10px"}}
                 transition={{repeat: Infinity, duration: 3, ease: "easeInOut"}}>
-                <Image src="/scroll.svg" alt="Scroll" width={30} height={30}></Image>
+                <Image src="/scroll.svg" alt="Scroll" width={30} height={30} unoptimized></Image>
               </motion.div>
               
           </div>
