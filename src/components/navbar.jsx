@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navlink from "./navLink";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence  } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const links = [
     {url: '/', title: 'Home'},
@@ -15,6 +16,11 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const topVariants = {
     closed: {
@@ -101,7 +107,7 @@ const Navbar = () => {
   <div className="md:hidden">
     <button
       className="w-10 h-8 flex flex-col justify-between z-50 relative"
-      onClick={() => setOpen((prev) => !prev)}
+      onClick={() => setOpen(!open)}
     >
       <motion.div 
         variants={topVariants} 
@@ -120,18 +126,24 @@ const Navbar = () => {
       </motion.div>
     </button>
 
+<AnimatePresence>
     {open && (
-      <motion.div variants={listVariants} initial='closed' animate='opened' className="fixed top-0 left-0 w-screen h-screen bg-black/60 backdrop-blur-md text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
+      <motion.div variants={listVariants} initial='closed' animate='opened' exit="closed" className="fixed top-0 left-0 w-screen h-screen bg-black/60 backdrop-blur-md text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
         {links.map((link) => (
-          <motion.div variants={listItemVarients} key={link.title} onClick={() => setOpen(false)}>
-            <Link href={link.url}>
+          <motion.div variants={listItemVarients} key={link.title}  className="relative z-50">
+            <Link href={link.url}
+                    className="block w-full p-4 hover:text-gray-300 transition-colors"
+                    onClick={() => setOpen(false)}
+                    prefetch={false}>
               {link.title}
             </Link>
           </motion.div>
         ))}
+        
 
       </motion.div>
     )}
+    </AnimatePresence>
   </div>
 </div>
 
