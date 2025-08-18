@@ -97,26 +97,25 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Mobile/Tablet Version - COMPLETELY REDESIGNED */}
+      {/* Mobile/Tablet Version - FIXED WHITE SPACE ISSUE */}
       <div className="lg:hidden">
-        {/* Intro Section - Mobile: PERFECTLY CENTERED */}
-        <div className="w-screen min-h-[100dvh] flex items-center justify-center px-4 text-center">
-  <div className="flex flex-col items-center justify-center gap-4 -translate-y-20">
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-none whitespace-nowrap">
-      My Works
-    </h1>
-    <motion.div
-      initial={{ opacity: 0.2, y: 0 }}
-      animate={{ opacity: 1, y: "8px" }}
-      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-    >
-      <Image src="/scroll.svg" alt="Scroll" width={28} height={28} className="sm:w-8 sm:h-8" />
-    </motion.div>
-  </div>
-</div>
+        {/* Intro Section - Mobile: FIXED HEIGHT */}
+        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center px-4 text-center">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-none whitespace-nowrap">
+              My Works
+            </h1>
+            <motion.div
+              initial={{ opacity: 0.2, y: 0 }}
+              animate={{ opacity: 1, y: "8px" }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            >
+              <Image src="/scroll.svg" alt="Scroll" width={28} height={28} className="sm:w-8 sm:h-8" />
+            </motion.div>
+          </div>
+        </div>
 
-
-        {/* Vertical Scroll Section - Mobile: TOP-TO-BOTTOM GRADIENTS */}
+        {/* Vertical Scroll Section - Mobile: NO GAP */}
         <div className="flex flex-col">
           {items.map((item) => (
             <div
