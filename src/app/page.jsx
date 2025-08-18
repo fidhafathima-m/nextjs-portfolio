@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import Link from "next/link";
 
 const Homepage = () => {
   return (
@@ -21,8 +22,12 @@ const Homepage = () => {
         <p className="">I am a passionate web developer and computer programmer with expertise in creating modern, responsive, and user-friendly websites and applications. With a strong foundation in both frontend and backend technologies, I strive to deliver high-quality solutions that meet client needs.</p>
       
         <div className="flex gap-4">
-          <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">View my Works</button>
-          <button className="p-4 rounded-lg ring-1 ring-black">Contact Me</button>
+          <Link href='/portfolio'>
+            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">View my Works</button>
+          </Link>
+          <Link href='/contact'>
+            <button className="p-4 rounded-lg ring-1 ring-black">Contact Me</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -307,7 +307,7 @@ const About = () => {
           {/* <div className="h-4 lg:h-screen"></div> */}
         </div>
         {/* svg */}
-        <div className="hidden lg:block lg:w-1/3 xl:w-1/2 sticky top-0 z-30 h-screen">
+        <div className="hidden lg:block lg:w-1/3 xl:w-1/2 sticky top-0 z-30 h-screen ps-4">
           <Brain scrollYProgress={scrollYProgress}/>
         </div>
       </div>

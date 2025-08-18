@@ -127,38 +127,42 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Vertical Scroll Section - Mobile: NO GAP */}
-        <div className="flex flex-col">
-          {items.map((item) => (
-            <div
-              className={`h-screen w-screen flex items-center justify-center bg-gradient-to-b ${item.color} px-6`}
-              key={item.id}
-            >
-              <div className="flex flex-col gap-4 text-white max-w-sm sm:max-w-md text-center">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">{item.title}</h1>
-                <div className="relative w-full h-56 sm:h-64 md:h-72 mx-auto">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-cover rounded-2xl shadow-2xl"
-                  />
-                </div>
-                <p className="text-lg sm:text-xl md:text-2xl opacity-95 font-medium">{item.desc}</p>
-                <Link href={item.link} className="flex justify-center mt-2">
-                  <button className="bg-white text-black px-10 py-4 sm:px-12 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
-                    See Demo
-                  </button>
-                </Link>
-                <Link href={item.gitLink} className="flex justify-center mt-2">
-                  <button className="bg-white text-black px-10 py-4 sm:px-12 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
-                    See Code
-                  </button>
-                </Link>
-              </div>
-            </div>
-          ))}
+        {/* Vertical Scroll Section - Mobile */}
+<div className="flex flex-col">
+  {items.map((item) => (
+    <div
+      className={`h-screen w-screen flex items-center justify-center bg-gradient-to-b ${item.color} px-6`}
+      key={item.id}
+    >
+      <div className="flex flex-col gap-4 text-white max-w-sm sm:max-w-md w-full">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-center">{item.title}</h1>
+        <div className="relative w-full h-56 sm:h-64 md:h-72 mx-auto">
+          <Image
+            src={item.img}
+            alt={item.title}
+            fill
+            className="object-cover rounded-2xl shadow-2xl"
+          />
         </div>
+        <p className="text-lg sm:text-xl md:text-2xl opacity-95 font-medium text-center">{item.desc}</p>
+        
+        {/* Button container - aligned to right */}
+        <div className="flex justify-end gap-3 mt-4"> {/* Changed to flex-end and added gap */}
+          <Link href={item.link} className="flex">
+            <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
+              Demo
+            </button>
+          </Link>
+          <Link href={item.gitLink} className="flex">
+            <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
+              Code
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
 
       {/* Final Section - Mobile Optimized */}
