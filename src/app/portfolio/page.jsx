@@ -7,46 +7,59 @@ import Link from "next/link";
 const items = [
   {
     id: 1,
+    color: "from-red-300 to-red-300",
+    title: "LocalFix",
+    desc: "An on-demand home services platform that connects customers with skilled technicians for various home repair and maintenance services. Book services, track orders in real-time, chat with technicians, and get your home issues fixed conveniently.",
+    img: "https://images.pexels.com/photos/9242887/pexels-photo-9242887.jpeg",
+    link: "https://localfix-services.vercel.app/",
+    gitLink: "https://github.com/fidhafathima-m/LocalFix",
+  },
+  {
+    id: 2,
     color: "from-red-300 to-blue-300",
     title: "Art Mart",
     desc: "An E-commerce website build to sell art supplies using HTML, Bootstrap, Node.js, Express.js and MongoDB.",
     img: "https://images.pexels.com/photos/1264940/pexels-photo-1264940.jpeg?_gl=1*hr6mvm*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU0OTkwNDYkajYwJGwwJGgw",
     link: "https://www.art-mart.shop/",
-    gitLink: "https://github.com/fidhafathima-m/Art-Mart"
+    gitLink: "https://github.com/fidhafathima-m/Art-Mart",
   },
   {
-    id: 2,
+    id: 3,
     color: "from-blue-300 to-violet-300",
     title: "To-Do List",
     desc: "A simple to-do list where users can add, edit, delete and rearrange to-dos. Developed using React.",
     img: "https://images.pexels.com/photos/8850706/pexels-photo-8850706.jpeg?_gl=1*wdaqtf*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDAzNDYkajIyJGwwJGgw",
     link: "https://todo-app-fidha.netlify.app/",
-    gitLink: "https://github.com/fidhafathima-m/to-do-app-react"
+    gitLink: "https://github.com/fidhafathima-m/to-do-app-react",
   },
   {
-    id: 3,
+    id: 4,
     color: "from-violet-300 to-purple-300",
     title: "OLX Clone",
     desc: "A full-featured OLX Clone built using the MERN Stack (MongoDB, Express, React, Node.js) and Context API for state management.",
     img: "https://images.pexels.com/photos/5076525/pexels-photo-5076525.jpeg?_gl=1*bll1ud*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDA4ODIkajU5JGwwJGgw",
     link: "https://fi-olx-clone.netlify.app/",
-    gitLink: "https://github.com/fidhafathima-m/olx-axions"
+    gitLink: "https://github.com/fidhafathima-m/olx-axions",
   },
   {
-    id: 4,
+    id: 5,
     color: "from-purple-300 to-red-300",
     title: "Netflix Clone",
     desc: "A responsive movie browsing web app built with React, allowing users to explore, watch trailers, and manage a personalized watchlist. Features secure authentication, dynamic routing, and data from the TMDB API.",
     img: "https://images.pexels.com/photos/5082561/pexels-photo-5082561.jpeg?_gl=1*32hmib*_ga*MjEyNTkwMjM0NS4xNzU1NDk4OTIw*_ga_8JE65Q40S6*czE3NTU0OTg5MjAkbzEkZzEkdDE3NTU1MDA5OTkkajUkbDAkaDA.",
     link: "https://f-netfliks-clone.netlify.app/",
-    gitLink: "https://github.com/fidhafathima-m/netflix-react"
+    gitLink: "https://github.com/fidhafathima-m/netflix-react",
   },
 ];
 
 const Portfolio = () => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${100 * (items.length - 1)}vw`]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `-${100 * (items.length - 1)}vw`]
+  );
 
   return (
     <motion.div
@@ -65,44 +78,51 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: "10px" }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
-            <Image src="/scroll.svg" alt="Scroll" width={30} height={30}  unoptimized />
+            <Image
+              src="/scroll.svg"
+              alt="Scroll"
+              width={30}
+              height={30}
+              unoptimized
+            />
           </motion.div>
         </div>
 
         {/* Horizontal Scroll Section - Desktop */}
         <div className="sticky top-0 h-screen overflow-hidden">
-          <motion.div style={{ x }} className="flex h-full w-[400vw]">
-            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
+          <motion.div style={{ x,  width: `${(items.length) * 100}vw` }} className="flex h-full">
+            <div className="py-20 w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
               <div
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
                 <div className="flex flex-col gap-4 text-white max-w-xl px-4">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-4xl xl:text-8xl">{item.title}</h1>
-                  <div className="relative w-70 h-40 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ">
+                    {item.title}
+                  </h1>
+                  <div className="relative w-60 h-36 sm:w-72 sm:h-48 md:w-80 md:h-56 lg:w-96 lg:h-64">
                     <Image
                       src={item.img}
                       alt={item.title}
                       fill
                       className="object-cover rounded-lg"
-                       unoptimized
+                      unoptimized
                     />
                   </div>
                   <p>{item.desc}</p>
                   <div className="flex justify-end gap-4">
-  <Link href={item.link}>
-    <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
-      See Demo
-    </button>
-  </Link>
-  <Link href={item.gitLink}>
-    <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
-      See Code
-    </button>
-  </Link>
-</div>
-                  
+                    <Link href={item.link}>
+                      <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
+                        See Demo
+                      </button>
+                    </Link>
+                    <Link href={item.gitLink}>
+                      <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-200">
+                        See Code
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -123,48 +143,61 @@ const Portfolio = () => {
               animate={{ opacity: 1, y: "8px" }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
-              <Image src="/scroll.svg" alt="Scroll" width={28} height={28} className="sm:w-8 sm:h-8"  unoptimized/>
+              <Image
+                src="/scroll.svg"
+                alt="Scroll"
+                width={28}
+                height={28}
+                className="sm:w-8 sm:h-8"
+                unoptimized
+              />
             </motion.div>
           </div>
         </div>
 
         {/* Vertical Scroll Section - Mobile */}
-<div className="flex flex-col">
-  {items.map((item) => (
-    <div
-      className={`h-screen w-screen flex items-center justify-center bg-gradient-to-b ${item.color} px-6`}
-      key={item.id}
-    >
-      <div className="flex flex-col gap-4 text-white max-w-sm sm:max-w-md w-full">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-center">{item.title}</h1>
-        <div className="relative w-full h-56 sm:h-64 md:h-72 mx-auto">
-          <Image
-            src={item.img}
-            alt={item.title}
-            fill
-            className="object-cover rounded-2xl shadow-2xl"
-             unoptimized
-          />
+        <div className="flex flex-col">
+          {items.map((item) => (
+            <div
+              className={`h-screen w-screen flex items-center justify-center bg-gradient-to-b ${item.color} px-6`}
+              key={item.id}
+            >
+              <div className="flex flex-col gap-4 text-white max-w-sm sm:max-w-md w-full">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-center">
+                  {item.title}
+                </h1>
+                <div className="relative w-full h-56 sm:h-64 md:h-72 mx-auto">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-2xl shadow-2xl"
+                    unoptimized
+                  />
+                </div>
+                <p className="text-lg sm:text-xl md:text-2xl opacity-95 font-medium text-center">
+                  {item.desc}
+                </p>
+
+                {/* Button container - aligned to right */}
+                <div className="flex justify-end gap-3 mt-4">
+                  {" "}
+                  {/* Changed to flex-end and added gap */}
+                  <Link href={item.link} className="flex">
+                    <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
+                      Demo
+                    </button>
+                  </Link>
+                  <Link href={item.gitLink} className="flex">
+                    <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
+                      Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <p className="text-lg sm:text-xl md:text-2xl opacity-95 font-medium text-center">{item.desc}</p>
-        
-        {/* Button container - aligned to right */}
-        <div className="flex justify-end gap-3 mt-4"> {/* Changed to flex-end and added gap */}
-          <Link href={item.link} className="flex">
-            <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
-              Demo
-            </button>
-          </Link>
-          <Link href={item.gitLink} className="flex">
-            <button className="bg-white text-black px-6 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105">
-              Code
-            </button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
       </div>
 
       {/* Final Section - Mobile Optimized */}
@@ -186,7 +219,10 @@ const Portfolio = () => {
               />
             </defs>
             <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-sm sm:text-lg md:text-xl lg:text-lg font-bold tracking-widest">
+              <textPath
+                xlinkHref="#circlePath"
+                className="text-sm sm:text-lg md:text-xl lg:text-lg font-bold tracking-widest"
+              >
                 •MernStackDeveloper•ComProgrammer•MernStackDeveloper•ComProgrammer•
               </textPath>
             </text>

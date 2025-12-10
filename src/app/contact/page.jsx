@@ -54,9 +54,9 @@ const Contact = () => {
       animate={{y: "0%"}}
       transition={{duration: 1}}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-6 md:px-8 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-6 md:px-8 lg:px-20 xl:px-48 overflow-hidden">
         {/* Left side - Animation */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-3xl sm:text-4xl">
+        <div className="flex-1 lg:h-full lg:w-1/2 flex items-center justify-center text-3xl sm:text-4xl text-center">
           <motion.div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -77,11 +77,11 @@ const Contact = () => {
         </div>
         
         {/* Right side - Form */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative pb-3">
+        <div className="flex-1 lg:h-full lg:w-1/2 relative pb-3 flex items-center">
           <form 
             onSubmit={sendEmail} 
             ref={form} 
-            className="bg-red-50 rounded-xl flex flex-col gap-4 sm:gap-6 justify-center p-6 sm:p-8 md:p-10 lg:p-12 h-full"
+            className="bg-red-50 rounded-xl flex flex-col gap-4 sm:gap-6 p-6 sm:p-8 md:p-10 lg:p-12 w-full"
           >
             {/* Loading indicator */}
             {status.loading && (
@@ -146,7 +146,7 @@ const Contact = () => {
     className="whitespace-nowrap overflow-hidden text-ellipsis"
   >
     <motion.span
-      className="text-xl md:text-2xl font-light bg-gradient-to-r from-purple-500 via-pink-400 to-orange-500 bg-clip-text text-transparent inline-flex items-center"
+      className="text-l md:text-2xl font-light bg-gradient-to-r from-purple-500 via-pink-400 to-orange-500 bg-clip-text text-transparent inline-flex items-center"
       animate={{ 
         backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
       }}
