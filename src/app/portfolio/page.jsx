@@ -11,7 +11,7 @@ const items = [
     title: "LocalFix",
     desc: "An on-demand home services platform that connects customers with skilled technicians for various home repair and maintenance services. Book services, track orders in real-time, chat with technicians, and get your home issues fixed conveniently.",
     img: "https://images.pexels.com/photos/9242887/pexels-photo-9242887.jpeg",
-    link: "https://localfix-services.vercel.app/",
+    link: "https://www.localfix.store",
     gitLink: "https://github.com/fidhafathima-m/LocalFix",
   },
   {
